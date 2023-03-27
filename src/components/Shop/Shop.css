@@ -12,10 +12,13 @@
 }
 .cart-container{
     padding: 10px;
-    text-align: center;
     background: rgb(246, 211, 165);
+}
+.cart-title{
+    text-align: center;
 }
 .cart-container h3{
     color: #444;
     font-size: 20px;
+    margin-bottom: 16px;
 }
