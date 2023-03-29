@@ -18,3 +18,22 @@
 .nav-items a:hover{
     color:cyan
 }
+
+/* media query for the mobile device */
+
+@media only screen and (max-width: 600px){
+    .header{
+        height: 60px;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+
+    }
+    .logo{
+        width: 100px;
+    }
+    .nav-items a{
+        margin-left: 16px;
+    }
+}
