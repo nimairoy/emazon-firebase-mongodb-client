@@ -1,0 +1,23 @@
+.reviewItem-container{
+    width: 88%;
+}
+.reviewItem-card{
+    padding: 8px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+}
+.cart-image{
+    width: 90px;
+    border-radius: 10px;
+}
+.review-details h4{
+    font-size: 18px;
+}
+.review-details p{
+    font-size: 15px;
+    margin-top: 8px;
+}
