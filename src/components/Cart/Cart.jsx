@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Children } from 'react';
 import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faCartFlatbedSuitcase, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({cart, handleClearCartButton}) => {
+const Cart = ({cart, handleClearCartButton, children}) => {
     // const cart = props.cart; // option 1
     // const {cart} = props; // option 2
     // console.log(cart)
@@ -43,10 +43,11 @@ const Cart = ({cart, handleClearCartButton}) => {
                 <p>Clear Cart</p>
                 <FontAwesomeIcon className='clear-icon' icon={faTrashCan} />
             </div>
-            <div className='checkout-cart-btn'>
+            {/* <div className='checkout-cart-btn'>
                 <p>Proceed Checkout</p>
                 <FontAwesomeIcon className='clear-icon' icon={faCartFlatbedSuitcase} />
-            </div>
+            </div> */}
+            {children}
         </div>
     );
 };

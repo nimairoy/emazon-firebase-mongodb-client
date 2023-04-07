@@ -1,3 +1,32 @@
 .reviewItem-container{
     padding-bottom: 40px;
 }
+.checkout-cart-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.clear-cart-btn{    
+    background-color: #FF3030;
+}
+.checkout-cart-btn{
+    background-color: #FF9900;
+    margin-top: 16px;
+}
+.checkout-cart-btn p,
+.clear-cart-btn p{
+    margin: 0;
+    margin-left: -5px;
+    color: #fff;
+}
+.clear-icon{
+    color: #ffffff;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
