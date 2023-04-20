@@ -1,0 +1,82 @@
+.wrapper{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.form-container {
+    width: 500px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: -18px 18px 0 rgba(255, 153, 0, 0.3);
+}
+input{
+    width: 100%;
+    padding: 8px 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #95A0A7;
+}
+.form-control{
+    margin-bottom: 30px;
+}
+.form-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-control label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.signingooglebutton,
+.login-btn{
+    background: rgba(255, 153, 0, 0.3);
+    border: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 100%;
+}
+.signingooglebutton{
+    padding: 8px 4px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+}
+.login-btn:hover{
+    background: rgba(255, 153, 0, 0.4);
+}
+.newtologin{
+    text-align: center;
+    margin-right: 15px;
+}
+.or{
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: block;
+    position: relative;
+}
+.or::after, .or::before{
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 1px;
+    background: #95A0A7;    
+}
+.or::before{
+    left: 7%;
+    top: 10px;
+}
+.or::after{
+    right: 7%;
+    top: 10px;
+}
+.googleIcon{
+    width: 15px;
+    height: 15px;
+    margin-top: 6px;
+    margin-right: 8px;
+}
