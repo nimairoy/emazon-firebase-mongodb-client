@@ -1,0 +1,9 @@
+.error-text{
+    color: red;
+}
+.success-text{
+    color: green;
+}
+.show-hide-button{
+    cursor: pointer;
+}

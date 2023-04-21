@@ -18,6 +18,10 @@
 .nav-items a:hover{
     color:cyan
 }
+.userEmail{
+    color: #fff;
+    margin-left: 16px;
+}
 
 /* media query for the mobile device */
 
