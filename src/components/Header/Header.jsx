@@ -22,8 +22,6 @@ const Header = () => {
     return (
         <nav className='header'>
             <Link to={'/'}><img className='logo' src={logo} alt="" /></Link>
-
-            helooooooooooooooooooooooooooooooooooooooooooooo
             <div className='nav-items'>
                 <Link to="/">Shop</Link>
                 <Link to="/orders">Orders</Link>

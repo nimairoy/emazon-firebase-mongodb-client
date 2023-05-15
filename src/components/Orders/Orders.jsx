@@ -10,15 +10,16 @@ import {  faCartFlatbedSuitcase } from '@fortawesome/free-solid-svg-icons';
 
 const Orders = () => {
     const savedCart = useLoaderData();
-
+    // console.log(savedCart)
     // useState
     const [cart, setCart] = useState(savedCart)
 
     // handle the cart remove hanlder function
-    const handleCartRemoveItem = (id) => {
-        const remaining = cart.filter(product => product.id !== id);
+    const handleCartRemoveItem = (_id) => {
+        // console.log(_id)
+        const remaining = cart.filter(product => product._id !== _id);
         setCart(remaining);
-        removeFromDb(id);
+        removeFromDb(_id);
     }
 
     //handle clear cart button
@@ -33,7 +34,7 @@ const Orders = () => {
             <div className="reviewItem-container">
                     {
                         cart.map(product => <ReviewItem
-                             key={product.id}
+                             key={product._id}
                              product ={product} 
                              handleCartRemoveItem={handleCartRemoveItem}                         
                             ></ReviewItem>)
