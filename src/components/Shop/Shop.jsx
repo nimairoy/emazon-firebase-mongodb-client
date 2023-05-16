@@ -34,8 +34,8 @@ const Shop = () => {
     // }, []);
 
 
-    useEffect( () => {
-        const fetchData = async() => {
+    useEffect(() => {
+        const fetchData = async () => {
             const response = await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
             const data = await response.json();
             setProducts(data)
@@ -46,27 +46,37 @@ const Shop = () => {
 
     useEffect(() => {
         const storedCart = getShoppingCart();
+        const ids = Object.keys(storedCart);
 
-        console.log(storedCart)
+        fetch('http://localhost:5000/productsByIds', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(ids)
+        })
+            .then(res => res.json())
+            .then(cartProducts => {
 
-        const savedCart = [];
-        // step 1. get id from the stored cart
-        for (const _id in storedCart) {
-            // step 2. get product by the id
-            const addedProduct = products.find(product => product._id === _id);
-            // step 3. add quantity from the addedProduct
-            if (addedProduct) {
-                const quantity = storedCart[_id];
-                addedProduct.quantity = quantity;
-                // step 4. push the product into the savedCart array
-                savedCart.push(addedProduct);
-            }
-            console.log(addedProduct)
-        }
-        //step 5. set the cart
-        setCart(savedCart);
+                const savedCart = [];
+                // step 1. get id from the stored cart
+                for (const _id in storedCart) {
+                    // step 2. get product by the id
+                    const addedProduct = cartProducts.find(product => product._id === _id);
+                    // step 3. add quantity from the addedProduct
+                    if (addedProduct) {
+                        const quantity = storedCart[_id];
+                        addedProduct.quantity = quantity;
+                        // step 4. push the product into the savedCart array
+                        savedCart.push(addedProduct);
+                    }
+                    console.log(addedProduct)
+                }
+                //step 5. set the cart
+                setCart(savedCart);
+            })
 
-    }, [products]);
+    }, []);
 
     const handleAddToCart = (product) => {
         let newCart = [];
@@ -130,13 +140,13 @@ const Shop = () => {
                 </div>
             </div>
             <div className='pagination'>
-                <p style={{marginBottom: '16px'}}>Current Page: {currentPage} and items per page: {itemsPerPage}</p>
+                <p style={{ marginBottom: '16px' }}>Current Page: {currentPage} and items per page: {itemsPerPage}</p>
                 {
                     pageNumbers.map(number => <button
                         key={number}
-                        className={currentPage===number ? 'selected': ''}
-                        onClick={()=>setCurrentPage(number)}
-                        >{number}
+                        className={currentPage === number ? 'selected' : ''}
+                        onClick={() => setCurrentPage(number)}
+                    >{number}
                     </button>)
                 }
                 <select value={itemsPerPage} onChange={handleSelectChange}>
